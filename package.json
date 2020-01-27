@@ -1,0 +1,11 @@
+{
+  "name": "transfer-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Valuminous/transfer-system.git",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "mjml": "^4.2.1"
+  }
+}
