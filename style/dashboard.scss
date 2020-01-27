@@ -1,0 +1,39 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
+body{
+
+    .container-fluid{
+        padding-right: 0;
+        padding-left: 0;
+
+        h1{
+            margin-bottom: 0 !important;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        header{
+            background-color: grey;
+        }
+
+        aside{
+            border: solid;
+            height: 100vh;
+
+            .add_user{
+                margin-top: 5rem;
+            }
+        }
+        
+        
+    }
+}
+.chartjs-render-monitor {
+
+    width: 400px;
+    height: 250;
+}

@@ -1,0 +1,405 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../style/responsive/991px_768px.css";
+
+@font-face {
+    font-family: 'lato';
+    src: url('../fonts/lato/Lato-Regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/lato/Lato-Regular.woff') format('woff'),
+        /* Pretty Modern Browsers */
+        url('../fonts/lato/Lato-Regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/lato/Lato-Regular.svg') format('svg');
+    /* Legacy iOS */
+
+}
+
+body {
+    background-color: #13252D;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #E9654C;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #A34735;
+    }
+
+    main {
+
+        .sa {
+            width: 140px;
+            height: 140px;
+            padding: 26px;
+            background-color: #fff;
+
+            &-success {
+                border-radius: 50%;
+                border: 4px solid #E9654C;
+                box-sizing: content-box;
+                height: 80px;
+                padding: 0;
+                position: relative;
+                background-color: #fff;
+                width: 80px;
+
+                &:after,
+                &:before {
+                    background: #fff;
+                    content: '';
+                    height: 120px;
+                    position: absolute;
+                    transform: rotate(45deg);
+                    width: 60px;
+                }
+
+                &:before {
+                    border-radius: 40px 0 0 40px;
+                    width: 26px;
+                    height: 80px;
+                    top: -17px;
+                    left: 5px;
+                    transform-origin: 60px 60px;
+                    transform: rotate(-45deg);
+                }
+
+                &:after {
+                    border-radius: 0 120px 120px 0;
+                    left: 30px;
+                    top: -11px;
+                    transform-origin: 0 60px;
+                    transform: rotate(-45deg);
+                    animation: rotatePlaceholder 4.25s ease-in;
+                }
+
+                &-placeholder {
+                    border-radius: 50%;
+                    border: 4px solid rgba(233, 102, 76, 0.295);
+                    box-sizing: content-box;
+                    height: 80px;
+                    left: -4px;
+                    position: absolute;
+                    top: -4px;
+                    width: 80px;
+                    z-index: 2;
+                }
+
+                &-fix {
+                    background-color: #fff;
+                    height: 90px;
+                    left: 28px;
+                    position: absolute;
+                    top: 8px;
+                    transform: rotate(-45deg);
+                    width: 5px;
+                    z-index: 1;
+                }
+
+                &-tip,
+                &-long {
+                    background-color: #E9654C;
+                    border-radius: 2px;
+                    height: 5px;
+                    position: absolute;
+                    z-index: 2;
+                }
+
+                &-tip {
+                    left: 14px;
+                    top: 46px;
+                    transform: rotate(45deg);
+                    width: 25px;
+                    animation: animateSuccessTip .75s;
+                }
+
+                &-long {
+                    right: 8px;
+                    top: 38px;
+                    transform: rotate(-45deg);
+                    width: 47px;
+                    animation: animateSuccessLong .75s;
+                }
+            }
+        }
+
+        @keyframes animateSuccessTip {
+
+            0%,
+            54% {
+                width: 0;
+                left: 1px;
+                top: 19px;
+            }
+
+            70% {
+                width: 50px;
+                left: -8px;
+                top: 37px;
+            }
+
+            84% {
+                width: 17px;
+                left: 21px;
+                top: 48px;
+            }
+
+            100% {
+                width: 25px;
+                left: 14px;
+                top: 45px;
+            }
+        }
+
+        @keyframes animateSuccessLong {
+
+            0%,
+            65% {
+                width: 0;
+                right: 46px;
+                top: 54px;
+            }
+
+            84% {
+                width: 55px;
+                right: 0;
+                top: 35px;
+            }
+
+            100% {
+                width: 47px;
+                right: 8px;
+                top: 38px;
+            }
+        }
+
+        @keyframes rotatePlaceholder {
+
+            0%,
+            5% {
+                transform: rotate(-45deg);
+            }
+
+            100%,
+            12% {
+                transform: rotate(-405deg);
+            }
+        }
+
+        .download_maindiv{
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.377) 12px 0px 10px;
+
+            .download_icon{
+                font-size: 5rem;
+                color: #E9654C;
+                margin-bottom: 1rem;
+            }
+
+            button{
+                background-color: #4AC6D4;
+                font-family: 'lato';
+                font-weight: bold;
+                color: white;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .files_contenu {
+                font-family: 'lato';
+                font-weight: bold;
+                color: #13252D;
+                text-decoration: underline;
+            }
+
+            .download_files_style{
+                font-size: 1.5rem;
+                font-family: 'lato';
+                color: #13252D;
+            }
+        }
+
+        .upload_maindiv {
+
+            height: 294px;
+            background: white;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.377) 12px 0px 10px;
+
+            i{
+                color: #E9654C;
+                font-size: 1.2rem;
+            }
+
+            .mail_success{
+                font-family: 'lato';
+                color: #13252D;
+                font-size: 1.5rem;
+            }
+
+            input{
+                font-family: 'lato';
+                color: rgba(0, 0, 0, 0.350);
+            }
+
+            button{
+                background-color: #4AC6D4;
+                border-color: #4AC6D4;
+                border-radius: 0;
+
+                span{
+                    font-weight: bold;
+                    color: white;
+                }
+            }
+        }
+
+        .upload_footer{
+            background: #E9654C;
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.377) 7px 5px 10px 5px;
+        }
+
+        .upload_linkdiv {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .slogan_style {
+            color: white;
+            font-family: 'lato';
+            font-size: 1.5rem;
+
+            span {
+                color: #4AC6D4;
+            }
+        }
+
+        .left_content {
+            height: 50vh;
+            background-color: #E9654C;
+            box-shadow: rgba(0, 0, 0, 0.377) 12px 13px 10px;
+            overflow-y: scroll;
+        }
+
+        .right_content {
+            height: 50vh;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.377) 12px 13px 10px;
+
+            input {
+                border-right: none;
+                border-left: none;
+                border-top: none;
+                border-bottom-color: #E9654C;
+            }
+        }
+
+        form {
+
+            ::-webkit-input-placeholder {
+                text-align: center;
+                color: #13252D;
+                font-weight: bold;
+                font-family: 'lato' !important;
+            }
+
+            .input_message {
+                height: 35%;
+            }
+
+            .hidden_file_input {
+                display: none;
+            }
+
+            .file_content {
+                min-height: 30vh;
+
+                .files_content {
+                    width: 200px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-family: 'lato';
+                    font-weight: bold;
+                    margin-top: 2rem;
+                    margin-bottom: 0 !important;
+                    color: #13252D;
+                }
+
+                i {
+                    color: #A34735;
+                    font-size: 12rem;
+                    margin-top: 12%;
+                }
+            }
+
+            .info_style {
+                font-family: 'lato';
+                font-size: 1rem;
+                color: white;
+            }
+
+
+            i {
+                color: #4AC6D4;
+                font-size: 2rem;
+            }
+
+            label {
+
+                font-family: 'lato';
+                font-size: 1.5rem;
+                color: white;
+
+                img {
+                    width: 15%;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                span {
+                    margin-top: -5px !important;
+                    font-family: 'lato';
+                    font-style: italic;
+                    font-size: 1rem;
+                    color: white;
+                }
+            }
+
+            textarea {
+                border-right: none;
+                border-left: none;
+                border-top: none;
+                border-bottom-color: #E9654C;
+                border-width: 2px;
+                resize: none;
+            }
+            
+            button {
+                background-color: #13252D;
+                width: 30%;
+                font-family: 'lato' !important;
+                font-size: 1.5rem !important;
+                font-weight: bold;
+                color: white;
+            }
+        }
+
+    }
+}
+
+.extension { 
+    font-family: 'lato';
+    font-size: 12.5px;
+    color: antiquewhite;
+}

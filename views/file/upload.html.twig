@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="upload_maindiv  w-50 mx-auto">
+                    <div class="sa mx-auto">
+                        <div class="sa-success">
+                            <div class="sa-success-tip"></div>
+                            <div class="sa-success-long"></div>
+                            <div class="sa-success-placeholder"></div>
+                            <div class="sa-success-fix"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center mail_success">L'email a été envoyé avec succès !</p>
+                    </div>
+                    <div class="upload_linkdiv">
+                        <p class="text-center"><i class="fas fa-info"></i> Vous pouvez aussi copier le lien
+                            de partage ci-dessous</p>
+                        <div class="d-flex">
+                            <input class="w-75" type="text" value="{{ url }}" id="inputLink">
+                            <button class="w-25 btn" onclick="copyLink()" data-toggle="tooltip" data-placement="top"
+                                title="Copier le lien de téléchargement"><span>Copier le lien</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center w-50 mx-auto">
+            <p class="upload_footer pt-2 pb-2">L'équipe SwishFile vous remercie d'avoir utilisé ses services 🙂</p>
+        </div>
+    </div>
+</div>
+
+<script src="js/upload.js"></script>
+{% endblock %}

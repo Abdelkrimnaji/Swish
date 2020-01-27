@@ -1,0 +1,20 @@
+@import url(../node_modules/bootstrap/dist/css/bootstrap.css);
+body .container-fluid {
+  padding-right: 0;
+  padding-left: 0; }
+  body .container-fluid h1 {
+    margin-bottom: 0 !important; }
+  body .container-fluid ul {
+    list-style: none;
+    padding: 0; }
+  body .container-fluid header {
+    background-color: grey; }
+  body .container-fluid aside {
+    border: solid;
+    height: 100vh; }
+    body .container-fluid aside .add_user {
+      margin-top: 5rem; }
+
+/*# sourceMappingURL=dashboard.css.map */
+
+

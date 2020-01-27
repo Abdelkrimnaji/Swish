@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="download_maindiv w-50 mx-auto text-center">
+                    <div class="text-center">
+                        <div class="text-center">
+                            <i class="fas fa-download mt-4 download_icon"></i>
+                            <p class="download_files_style">Cliquez sur les fichiers pour les télécharger !</p>
+                        </div>
+                        <div class="text-center">
+                            {% for elem in array_name %}
+                                <i class="fas fa-file-download download_over"></i> <a class="files_contenu" href="{{ array_path[loop.index0] }}/{{ array_fichier[loop.index0] }}">{{
+                                    elem }}</a></br>
+                            {% endfor %}
+                            {# <a href="{{ url_zip }}"><button type="submit" class="btn">Tout télécharger</button></a> #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center w-50 mx-auto">
+            <p class="upload_footer pt-2 pb-2">L'équipe SwishFile vous remercie d'avoir utilisé ses services 🙂</p>
+        </div>
+    </div>
+</div>
+
+<script src="js/download.js"></script>
+{% endblock %}
