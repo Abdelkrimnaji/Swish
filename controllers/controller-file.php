@@ -263,7 +263,6 @@ function checkFormSend($senderMail, $receiverMail) {
 	} else {
 		return false;
 	}
-	$file = $_SERVER["DOCUMENT_ROOT"]."/swish.zip";
 }
 
 /* Récupère l'URL actuel,
