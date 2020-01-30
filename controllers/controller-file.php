@@ -18,7 +18,7 @@ $serverName = $_SERVER["SERVER_NAME"];
 
 switch ($action) {
 	case 'upload':
-		upload3(); // UPLOAD UN FICHIER
+		upload(); // UPLOAD UN FICHIER
 		break;
 	case 'download':
 		download($idFolder, $idFile); // DOWNLOAD UN FICHIER
@@ -35,7 +35,7 @@ switch ($action) {
 }
 
 // ACTION UPLOAD FILE
-function upload3() {
+function upload() {
 	global $twig;
 	// CONFIG
 	$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'txt' , 'doc', 'docx', 'sql', 'zip', 'rtf', 'pdf', 'mp3', 'wav', 'rar', 'csv', 'ttf', 'ico', 'doc', 'psd', 'css', 'html', 'php', 'odp', 'ppt', 'doc', 'xls', 'xlsx', 'mp4', 'mpg', 'mpeg', 'wmv'); // Extensions autorisées.
@@ -125,16 +125,6 @@ function upload3() {
 	}
 }
 
-function upload2() {
-	$regMail =  "/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/";
-	$senderMail = $_POST["sender-mail"];
-
-	if (preg_match($regMail, $senderMail)) {
-		echo 'mail valide';
-	}else{
-		echo 'mail no valide';
-	}
-}
 // ACTION : DOWNLOAD FILE
 function  download($idFolder, $idFile) {
 	file_list($idFolder);
@@ -144,39 +134,6 @@ function  download($idFolder, $idFile) {
 function  telecharger($idFolder, $idFile) {	
 	download_file($idFolder, $idFile);
 }
-
-// function download_zip($idFolder) {
-// 	global $idFolder, $file, $idFile;
-
-// 	//Adresse du dossier
-// 	$rep = $_SERVER["DOCUMENT_ROOT"]."/cloud/$idFolder";
-	
-// 	$zip = new ZipArchive(); 
-// 	if($zip->open("cloud/$idFolder/swish.zip", ZipArchive::CREATE) === true){
-// 	  	echo '&quot;Zip.zip&quot; ouvert<br/>';
-// 	  	if($dossier = opendir($rep)){ 
-// 			while( ($fichier = readdir($dossier)) !== false){ 
-// 				if($fichier != '.' && $fichier != '..' ){ 
-// 					$new_name = getFile_name($fichier);
-// 						$name = $fichier;
-// 					$test = "$rep/$name";
-// 				// Ajout d'un fichier
-// 				$zip->addFile($test,$new_name["file_name"]);	
-// 				} 
-// 			} 
-// 			closedir($dossier); 
-// 		}else{
-// 			echo 'Une erreur est survenue'; 
-// 		}
-// 			 // On referme l'archive
-// 		$zip->close();
-// 		echo 'Archive terminée<br/>';
-// 		$file = $_SERVER["DOCUMENT_ROOT"]."/cloud/$idFolder/swish.zip";
-// 		down($file, $idFile, $idFolder );
-// 	}else{
-// 	  echo 'Impossible d&#039;ouvrir &quot;Zip.zip<br/>';
-// 	}
-// }
 
 function file_list($idFolder){
 	global $twig, $url_zip,$idFolder,$array_name;	
@@ -344,7 +301,7 @@ function download_zip($idFolder) {
 	// On referme l'archive
 	$zip->close();
 	echo 'Archive terminée<br/>';
-	$file = $_SERVER["DOCUMENT_ROOT"]."/swish.zip";
+	$file = $_SERVER["DOCUMENT_ROOT"]."/cloud/$idFolder/swish.zip";
 	$name = "swish.zip";
 	down($file, $idFile, $idFolder, $name);	
 	}else{
